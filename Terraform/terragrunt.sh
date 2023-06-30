@@ -1,9 +1,9 @@
 #!/bin/bash
 
-wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.48.0/terragrunt_linux_arm64
+wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.48.0/terragrunt_linux_amd64
 
-mv terragrunt_linux_arm64 terragrunt
+sudo mv terragrunt_linux_amd64 terragrunt
 
 sudo mv terragrunt /usr/local/bin/terragrunt
 
-terragrunt --version
+sudo terragrunt --version
