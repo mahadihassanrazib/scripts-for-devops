@@ -6,6 +6,6 @@ mv terragrunt_linux_amd64 terragrunt
 
 chmod u+x terragrunt
 
-mv terragrunt /usr/local/bin/terragrunt
+sudo mv terragrunt /usr/local/bin/terragrunt
 
 terragrunt -v
