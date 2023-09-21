@@ -12,3 +12,4 @@ To use these scripts, follow these steps:
    ```shell
    git clone git@github.com:mahadihassanrazib/scripts-for-devops.git
 
+Please consider giving an star
