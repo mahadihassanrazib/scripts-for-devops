@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VM_COUNT = 1
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/jammy64"
+    config.vm.box_check_update = false
+
+    # Ubuntu Server 22.04 MVs
+    (1..VM_COUNT).each do |i|
+        config.vm.define "ubuntu-server-2204#{i}" do |worker|
+            worker.vm.hostname = "ubuntu-server-2204#{i}"
+            worker.vm.network "private_network", ip: "192.168.60.#{i + 10}"
+
+            worker.vm.provider "virtualbox" do |vb|
+                vb.name = "ubuntu-server-2204#{i}"
+                vb.memory = 2048
+                vb.cpus = 2
+                vb.gui = false
+            end
+
+            worker.vm.provision "shell", path: "scripts/common.sh"
+        end
+    end
+end
